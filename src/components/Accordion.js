@@ -5,13 +5,13 @@ const Accordion = ({ items, handleDeleteData }) => {
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   return (
-    <div className="border-x border-t rounded m-5">
+    <div className="rounded m-5">
       {items.map((item, index) => {
         const isExpanded = index === expandedIndex;
 
         return (
           <div key={item.id}>
-            <div className="flex bg-gray-50 border-b">
+            <div className="flex border-b mt-5">
               <div
                 onClick={() => {
                   if (index === expandedIndex) {
@@ -20,7 +20,7 @@ const Accordion = ({ items, handleDeleteData }) => {
                     setExpandedIndex(index);
                   }
                 }}
-                className=" flex w-11/12 border-8 bg-gray-200 items-center justify-start"
+                className="flex w-11/12 border-2 p-4 items-center justify-start"
               >
                 <span>{item.label}</span>
                 <span className="text-xl ml-auto">
@@ -29,16 +29,20 @@ const Accordion = ({ items, handleDeleteData }) => {
               </div>
               <div
                 onClick={() => {
-                  console.log("CLICK DELETE", handleDeleteData(item));
+                  handleDeleteData(item);
                 }}
-                className="flex w-1/12 bg-red-400 items-center justify-center py-2"
+                className="flex w-1/12 bg-red-400 items-center justify-center cursor-pointer"
               >
-                <span className="px-2 text-xl cursor-pointer ">
+                <span className="px-2 text-xl ">
                   <GoX />
                 </span>
               </div>
             </div>
-            {isExpanded && <div className="border-b p-5">{item.content}</div>}
+            {isExpanded && (
+              <div className="border-b border-x border-t p-5 bg-gray-100">
+                {item.content}
+              </div>
+            )}
           </div>
         );
       })}

@@ -8,9 +8,6 @@ const AccordionPage = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // if (!title.length > 0 && !content.length > 0) {
-    //   return "Fill all the required fields";
-    // }
     const value = {
       id: Math.floor(Math.random() * 100),
       label: title,
@@ -52,7 +49,7 @@ const AccordionPage = () => {
           <button className="border-2 px-4">Submit</button>
         </form>
       </div>
-      <div className="my-4">
+      <div className="my-8">
         <Accordion items={data} handleDeleteData={handleDeleteData} />
       </div>
     </div>
