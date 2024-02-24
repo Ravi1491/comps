@@ -3,11 +3,18 @@ import Button from "./components/Button";
 function App() {
   return (
     <div>
-      <Button success outline rounded>
-        Click Me
-      </Button>
+      <Button secondary>success</Button>
       <Button primary rounded>
-        Click Me 2
+        primary
+      </Button>
+      <Button secondary outline>
+        secondary
+      </Button>
+      <Button warning outline>
+        warning
+      </Button>
+      <Button danger outline>
+        danger
       </Button>
     </div>
   );
