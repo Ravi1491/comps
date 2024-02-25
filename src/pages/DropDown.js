@@ -32,7 +32,12 @@ const DropDownPage = () => {
       <div className="flex items-center justify-center my-5 text-2xl font-bold underline">
         Drop Down Page
       </div>
-      <div className="mx-auto border w-2/12 cursor-pointer">
+      <div className="flex justify-evenly">
+        <DropDown
+          options={items}
+          value={selection}
+          onChange={handleSelection}
+        />
         <DropDown
           options={items}
           value={selection}
