@@ -33,7 +33,9 @@ const AccordionPage = () => {
   return (
     <div>
       <div>
-        <h1 className="text-3xl font-bold text-center mt-5">Accordion Page</h1>
+        <h1 className="text-2xl font-bold text-center my-5 underline">
+          Accordion Page
+        </h1>
       </div>
       <form onSubmit={handleFormSubmit} className="flex justify-center my-5">
         <label>Title:</label>
