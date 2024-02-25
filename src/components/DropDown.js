@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { GoTriangleDown } from "react-icons/go";
 
 const DropDown = ({ options, value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,11 @@ const DropDown = ({ options, value, onChange }) => {
 
   const renderedItems = options.map((option) => {
     return (
-      <div key={option.value} onClick={() => handleSelection(option)}>
+      <div
+        key={option.value}
+        className="border-t border-b p-3"
+        onClick={() => handleSelection(option)}
+      >
         {option.label}
       </div>
     );
@@ -22,10 +27,16 @@ const DropDown = ({ options, value, onChange }) => {
 
   return (
     <div>
-      <div className="bg-gray-200" onClick={handleClick}>
+      <div
+        className=" flex items-center justify-between p-3"
+        onClick={handleClick}
+      >
         {value?.label || "Select"}
+        <span className="text-xl">
+          <GoTriangleDown />
+        </span>
       </div>
-      {isOpen && <div className="bg-gray-100">{renderedItems}</div>}
+      {isOpen && <div>{renderedItems}</div>}
     </div>
   );
 };

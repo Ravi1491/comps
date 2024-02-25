@@ -10,19 +10,19 @@ const DropDownPage = () => {
 
   const items = [
     {
-      label: "red-color",
+      label: "Red-color",
       value: "red",
     },
     {
-      label: "blue-color",
+      label: "Blue-color",
       value: "blue",
     },
     {
-      label: "green-color",
+      label: "Green-color",
       value: "green",
     },
     {
-      label: "pink-color",
+      label: "Pink-color",
       value: "pink",
     },
   ];
@@ -32,7 +32,7 @@ const DropDownPage = () => {
       <div className="flex items-center justify-center my-5 text-2xl font-bold underline">
         Drop Down Page
       </div>
-      <div className="mx-auto border w-2/12 text-center ">
+      <div className="mx-auto border w-2/12 cursor-pointer">
         <DropDown
           options={items}
           value={selection}
