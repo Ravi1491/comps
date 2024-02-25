@@ -4,22 +4,28 @@ import Button from "../components/Button";
 
 const AccordionPage = () => {
   const [data, setData] = useState([]);
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [formData, setFormData] = useState({ title: "", content: "" });
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (title && content) {
+    if (formData.title && formData.content) {
       const value = {
         id: Math.floor(Math.random() * 100),
-        label: title,
-        content,
+        label: formData.title,
+        content: formData.content,
       };
 
       setData([...data, value]);
-      setTitle("");
-      setContent("");
+      setFormData({ title: "", content: "" });
     }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleDeleteData = (item) => {
@@ -40,17 +46,19 @@ const AccordionPage = () => {
       <form onSubmit={handleFormSubmit} className="flex justify-center my-5">
         <label>Title:</label>
         <input
-          value={title}
+          name="title"
+          value={formData.title}
           className="border-2 mx-2 p-1"
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={handleInputChange}
         />
         <label>Content:</label>
         <input
-          value={content}
+          name="content"
+          value={formData.content}
           className="border-2 mx-2 p-1"
-          onChange={(e) => setContent(e.target.value)}
+          onChange={handleInputChange}
         />
-        <Button primary outline>
+        <Button primary outline type="submit">
           Submit
         </Button>
       </form>
