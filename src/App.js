@@ -11,13 +11,6 @@ function App() {
       <DropDownPage />
     </div>
   );
-  // return (
-  //   <div className="truncate">
-  //     <Link to="/accordion">Go to Accordion</Link>
-  //     <Link to="/dropdown">Go to DropDown</Link>
-  //     <Link to="/accordion">Go to Accordion</Link>
-  //   </div>
-  // );
 }
 
 export default App;
