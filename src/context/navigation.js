@@ -17,8 +17,15 @@ const NavigationProvider = ({ children }) => {
     };
   });
 
+  const navigation = (to) => {
+    window.history.pushState({}, "", to);
+    setCurrentPath(to);
+  };
+
   return (
     <NavigationContext.Provider value={{}}>
+      <button onClick={() => navigation("/about")}>About</button>
+      <button onClick={() => navigation("/contact")}>Contact</button>
       {currentPath}
       {children}
     </NavigationContext.Provider>
