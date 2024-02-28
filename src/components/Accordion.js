@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { GoTriangleDown, GoTriangleLeft, GoX } from "react-icons/go";
 
 const Accordion = ({ items, handleDeleteData }) => {
-  console.log(items);
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   return (
