@@ -10,19 +10,19 @@ const DropDownPage = () => {
 
   const items = [
     {
-      label: "Red-color",
+      label: "Red",
       value: "red",
     },
     {
-      label: "Blue-color",
+      label: "Blue",
       value: "blue",
     },
     {
-      label: "Green-color",
+      label: "Green",
       value: "green",
     },
     {
-      label: "Pink-color",
+      label: "Pink",
       value: "pink",
     },
   ];
